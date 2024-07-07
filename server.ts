@@ -7,7 +7,7 @@ import swaggerUI from 'swagger-ui-express';
 dotenv.config();
 
 const app = express();
-const packageJson = require('./package.json');
+const packageJson = require('../package.json');
 
 const swaggerJsDoc = YAML.load('./swagger/docx.yaml');
 
