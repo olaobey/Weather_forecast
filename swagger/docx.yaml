@@ -1,0 +1,42 @@
+swagger: "2.0"
+info:
+  title: WEATHER FORECAST
+  description: Api documentation for a weather forecast API
+  version: 1.0.0
+  contact:
+    email: olaobey15@gmail.com
+  license:
+    name: "Apache 2.0"
+    url: http://apache.org
+servers:
+  -locaclurl: "http://localhost:5000"
+  Local-description: This is my local server
+  -liveurl: "http://localhost:5000/"
+  Live-description: This is a weather forecast website
+schemes: [http, https]
+
+# API ENDPOINTS
+
+paths:
+  # GET HELLO ROUTES
+  /api/v1/hello:
+    get:
+      tags:
+        - Get hello routes
+      summary: Returns a greeting with the visitor's IP, location, and temperature. 
+      description: Gets a greeting with the visitor's IP, location, and temperature
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - in: query
+          name: visitor_name
+          schema: 
+            type: string
+          required: false
+      responses:
+        200:
+          description:  A JSON object containing the greeting, IP, location, and temperature.
+        500: 
+          description: Internal Server Error
